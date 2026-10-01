@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archives Nocturnes Publication</title>
+<meta name="description" content="Outil local de publication des Shorts de la chaîne YouTube Archives Nocturnes.">
+<style>
+  :root { --bg:#ffffff; --fg:#1b1b1f; --muted:#5b5b66; --line:#e3e3ea; --accent:#3a4a8c; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#111216; --fg:#ececf1; --muted:#a3a3b0; --line:#2a2b33; --accent:#9fb0ff; } }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width:720px; margin:0 auto; padding:40px 16px 64px; }
+  h1 { font-size:1.8rem; margin:0 0 4px; } h2 { font-size:1.15rem; margin-top:2rem; }
+  .sub { color:var(--muted); margin:0 0 24px; }
+  a { color:var(--accent); } ol, ul { padding-left:1.3rem; }
+  footer { border-top:1px solid var(--line); margin-top:40px; padding-top:16px; color:var(--muted); font-size:.9rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Archives Nocturnes Publication</h1>
+  <p class="sub">Outil personnel de publication de la chaîne YouTube
+    <a href="https://www.youtube.com/@archives_nocturnes00">Archives Nocturnes (@archives_nocturnes00)</a>.</p>
+
+  <h2>À quoi sert cet outil</h2>
+  <p>Archives Nocturnes publie de courtes histoires de fiction au format Shorts. Ce programme tourne uniquement sur
+    l’ordinateur personnel du propriétaire de la chaîne. Il n’est ni vendu, ni proposé au public, et n’a pas d’autre
+    utilisateur que ce propriétaire.</p>
+
+  <h2>Fonctionnement</h2>
+  <ol>
+    <li>Le programme prépare une vidéo et la garde en attente de relecture. Rien n’est envoyé à ce stade.</li>
+    <li>Le propriétaire regarde la vidéo, vérifie son titre et sa description, puis valide explicitement une version précise.</li>
+    <li>Seulement après cette validation, le programme envoie cette vidéo sur la chaîne du propriétaire grâce à l’API YouTube Data,
+      avec la visibilité choisie, la déclaration « non destinée aux enfants » et la déclaration de contenu synthétique.</li>
+    <li>Il vérifie ensuite, par l’API, que la vidéo se trouve bien sur la bonne chaîne et quel est son statut de visibilité,
+      puis enregistre le lien localement.</li>
+  </ol>
+
+  <h2>Accès demandés au compte Google</h2>
+  <ul>
+    <li><strong>Mettre en ligne des vidéos</strong> (<code>youtube.upload</code>) : pour envoyer la vidéo validée.</li>
+    <li><strong>Consulter le compte YouTube</strong> (<code>youtube.readonly</code>) : pour lire l’identifiant de la chaîne,
+      ses derniers envois et le statut des vidéos envoyées, afin d’éviter tout envoi en double et de confirmer la visibilité.</li>
+  </ul>
+  <p>Le programme ne lit ni commentaires, ni messages, ni statistiques d’audience, et ne modifie aucune vidéo existante.</p>
+
+  <p><a href="confidentialite.html">Politique de confidentialité</a></p>
+
+  <footer>
+    <p>Contact : <a href="mailto:f.meas@laposte.net">f.meas@laposte.net</a></p>
+    <p>Cet outil utilise les services d’API YouTube. Voir les
+      <a href="https://www.youtube.com/t/terms">Conditions d’utilisation de YouTube</a> et les
+      <a href="https://policies.google.com/privacy">Règles de confidentialité de Google</a>.</p>
+  </footer>
+</main>
+</body>
+</html>
